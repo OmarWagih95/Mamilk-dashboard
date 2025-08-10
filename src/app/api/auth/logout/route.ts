@@ -1,11 +1,12 @@
 import { NextResponse } from 'next/server';
 import { removeToken } from '@/utils/auth';
 
-export async function POST() {
+export async function GET() {
   try {
     // Remove token from cookies
     const response = NextResponse.json({ message: 'Logged out successfully' });
-    removeToken();
+    // removeToken(response);
+    removeToken()
     return response;
   } catch (error) {
     console.error('Logout error:', error);

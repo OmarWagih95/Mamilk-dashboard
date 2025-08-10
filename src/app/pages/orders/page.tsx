@@ -29,10 +29,16 @@ const OrdersPage = () => {
       }
   }, [page, search, orderDate]);
 
+
+  // Reset page to 1 when search or orderDate changes
   useEffect(() => {
-    setPage(1); // Reset to first page on filter change
+    setPage(1);
+  }, [search, orderDate]);
+
+  // Fetch orders whenever page, search, or orderDate changes
+  useEffect(() => {
     fetchOrders();
-  }, [fetchOrders]);
+  }, [page, search, orderDate, fetchOrders]);
 
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= totalPages) {

@@ -13,13 +13,34 @@ const SidebarItem = ({ item, pageName, setPageName }: any) => {
       e.preventDefault();
       try {
         const response = await fetch("/api/auth/logout", {
-          method: "POST",
+          method: "GET",
+          credentials: 'include',
         });
-        if (response.ok) {
-          router.push("/login");
+        
+        console.log("Logout response status:", response.status); // Debug log
+        
+        if (response.status === 200) {
+          console.log("Logout successful, redirecting..."); // Debug log
+          // Try router.push first, fallback to window.location
+          try {
+            router.push("/login");
+            // Force redirect after a short delay if router.push doesn't work
+            setTimeout(() => {
+              if (window.location.pathname !== "/login") {
+                window.location.href = "/login";
+              }
+            }, 100);
+          } catch (routerError) {
+            console.error("Router error:", routerError);
+            window.location.href = "/login";
+          }
+        } else {
+          console.error("Logout failed:", response.status);
+          window.location.href = "/login";
         }
       } catch (error) {
         console.error("Logout failed:", error);
+        window.location.href = "/login";
       }
       return;
     }
