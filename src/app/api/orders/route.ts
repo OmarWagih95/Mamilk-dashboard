@@ -97,7 +97,7 @@ export async function GET(req: Request) {
   try {
     const orders = await ordersModel
       .find(filter)
-      .sort({ createdAt: 1 })
+      .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit);
     const totalOrders = await ordersModel.countDocuments(filter);
