@@ -8,7 +8,7 @@ import Image from "next/image";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
-import { BsHandbag } from "react-icons/bs";
+import { BsHandbag, BsImage } from "react-icons/bs";
 import { GiClothes } from "react-icons/gi";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { Berkishire } from "@/app/lib/fonts";
@@ -54,6 +54,11 @@ const menuGroups = [
         ),
         label: "Overview",
         route: "/",
+      },
+      {
+        icon: <BsImage />,
+        label: "Hero Section",
+        route: "/pages/hero-section",
       },
       {
         icon: <GoPackage />,

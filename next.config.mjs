@@ -1,29 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-              remotePatterns: [
-                {
-                  protocol: "https",
-                  hostname: "tyfa2qhumr.ufs.sh",
-                },
-                      {
-                        protocol: "https",
-                        hostname: "images.pexels.com",
-    
-                      },
-                      {
-                        protocol: "https",
-                        hostname: "utfs.io",
-    
-                      },
-                      {
-                        protocol: "https",
-                        hostname: "nos3hy6pzl.ufs.sh",
-    
-                      },
-              ]
-          
-          }
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "tyfa2qhumr.ufs.sh",
+            },
+            {
+                protocol: "https",
+                hostname: "images.pexels.com",
+            },
+            {
+                protocol: "https",
+                hostname: "utfs.io",
+            },
+            {
+                protocol: "https",
+                hostname: "nos3hy6pzl.ufs.sh",
+            },
+            {
+                protocol: "https",
+                hostname: "res.cloudinary.com",
+            },
+        ]
+    }
 };
 
 export default nextConfig;

@@ -141,3 +141,23 @@ export interface ShippingZone {
   zone_name: string;
   zone_rate: number;
 }
+
+export interface HeroCarousel {
+  _id: string;
+  desktopImage: string;
+  mobileImage: string;
+  path: string;
+  title: string;
+  desktopPosition: {
+    top: string;
+    left: string;
+  };
+  mobilePosition: {
+    top: string;
+    left: string;
+  };
+  isActive: boolean;
+  order: number;
+  createdAt?: string;
+  updatedAt?: string;
+}
